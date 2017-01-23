@@ -5,5 +5,14 @@
   <%= @train.number %>
 </p>
 
+<p>
+  <strong>Current route:</strong>
+  <% if @train.route.present? %>
+  <%= @train.route.title %>
+  <% else %>
+  Отсутствует
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_train_path(@train) %> |
 <%= link_to 'Back', trains_path %>
