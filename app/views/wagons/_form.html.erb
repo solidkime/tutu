@@ -1,0 +1,29 @@
+<%= form_for(wagon) do |f| %>
+<%= render 'common/errors', resource: @wagon %>
+
+  <div class="field">
+    <%= f.label :wagon_type %>
+    <%= f.select :wagon_type, [['Econom', :econom], ['Coupe',:coupe]] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :top_seats %>
+    <%= f.number_field :top_seats %>
+  </div>
+
+   <div class="field">
+    <%= f.label :low_seats %>
+    <%= f.number_field :low_seats %>
+  </div>
+
+  <div class="field">
+  <%= f.label :train_id %>
+  <%= f.collection_select :train_id, Train.all, :id, :number %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

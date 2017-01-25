@@ -8,6 +8,19 @@ class TrainsController < ApplicationController
 
   # GET /trains/1
   def show
+    @wagon_top_seats = 0
+    @wagon_low_seats = 0
+    @economs = 0
+    @coupes = 0
+    @train.wagons.each do |wagon|
+      @wagon_top_seats += wagon.top_seats
+      @wagon_low_seats += wagon.low_seats
+      if wagon.wagon_type == 'econom'
+        @economs +=1
+      elsif wagon.wagon_type == 'coupe'
+        @coupes +=1
+      end
+    end
   end
 
   # GET /trains/new
