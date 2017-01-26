@@ -15,23 +15,23 @@
 </p>
 
 <p>
-  Количество плацкартных вагонов: <%= @economs %>
+  Количество плацкартных вагонов: <%= @train.wagons.econom.count %>
 </p>
 
 <p>
-  Количество купейных вагонов: <%=@coupes %>
+  Количество купейных вагонов: <%=@train.wagons.coupe.count %>
 </p>
 
 <p>
   Количество плацкартных мест:
-  Верхних: <%=@wagon_top_seats %>
-  Нижних: <%=@wagon_low_seats %>
+  Верхних: <%= @train.wagons.econom.sum(:top_seats) %>
+  Нижних: <%= @train.wagons.econom.sum(:low_seats) %>
 </p>
 
 <p>
   Количество купейных мест:
-  Верхних: <%= %>
-  Нижних: <%= %>
+  Верхних: <%= @train.wagons.coupe.sum(:top_seats) %>
+  Нижних: <%= @train.wagons.coupe.sum(:low_seats) %>
 </p>
 
 
