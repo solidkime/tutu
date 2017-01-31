@@ -1,5 +1,3 @@
-class Wagon < ActiveRecord::Base
-  enum wagon_type: [ :econom, :coupe ]
-
+class Wagon < ApplicationRecord
   belongs_to :train
 end
