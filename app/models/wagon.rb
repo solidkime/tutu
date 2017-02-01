@@ -1,8 +1,17 @@
 class Wagon < ApplicationRecord
   belongs_to :train
 
-  scope :fromlast, -> { order(number: :desc)}
-  scope :fromfirst, -> { order(number: :asc)}
+  before_save :set_number, on: :create
+
+  scope :from_last, -> { order(number: :desc)}
+  scope :from_first, -> { order(number: :asc)}
 
   validates :number, uniqueness: { scope: :train_id }
+
+  private
+
+  def set_number
+    number = train.wagons.maximum(:number).to_i + 1
+  end
+
 end

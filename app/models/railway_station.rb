@@ -11,8 +11,8 @@ class RailwayStation < ApplicationRecord
     @station_route.update_attribute(:index_station, index_station) if station_route
   end
 
+  private
   
-
   def station_route(route)
     @station_route = railway_stations_routes.where(route: route).first
   end
