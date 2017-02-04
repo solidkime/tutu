@@ -9,9 +9,9 @@ class Wagon < ApplicationRecord
   validates :number, uniqueness: { scope: :train_id }
 
   private
-
+  
   def set_number
-    number = train.wagons.maximum(:number).to_i + 1
+    self.number = train.wagons.maximum(:number).to_i + 1
   end
 
 end

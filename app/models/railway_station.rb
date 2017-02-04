@@ -4,17 +4,21 @@ class RailwayStation < ApplicationRecord
   has_many :railway_stations_routes
   has_many :routes, through: :railway_stations_routes
 
-  scope :ordered, -> { joins(:railway_stations_routes).order("railway_stations_routes.index_station").uniq }
+  scope :ordered, -> { joins(:railway_stations_routes).order("railway_stations_routes.position").uniq }
 
-  def update_index_station(route, index_station)
+  def update_position(route, position)
     station_route = station_route(route)
-    @station_route.update_attribute(:index_station, index_station) if station_route
+    @station_route.update(position: position) if station_route
+  end
+
+  def position_in(route)
+    station_route(route).try(:position)
   end
 
   private
   
   def station_route(route)
-    @station_route = railway_stations_routes.where(route: route).first
+    @station_route ||= railway_stations_routes.where(route: route).first
   end
 
 end
