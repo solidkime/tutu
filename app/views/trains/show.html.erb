@@ -15,25 +15,13 @@
 </p>
 
 <p>
-  Количество плацкартных вагонов: <%= @train.wagons.econom.count %>
+  <strong>Вагоны</strong>
+  <% if @train.wagons.present? %>
+    <% @train.current_order_wagons.each do |wagon| %><br>
+      <%=  link_to "Вагон #{wagon.number}", wagon_path(wagon) %>
+    <% end %>
+  <% end %>
 </p>
-
-<p>
-  Количество купейных вагонов: <%=@train.wagons.coupe.count %>
-</p>
-
-<p>
-  Количество плацкартных мест:
-  Верхних: <%= @train.wagons.econom.sum(:top_seats) %>
-  Нижних: <%= @train.wagons.econom.sum(:low_seats) %>
-</p>
-
-<p>
-  Количество купейных мест:
-  Верхних: <%= @train.wagons.coupe.sum(:top_seats) %>
-  Нижних: <%= @train.wagons.coupe.sum(:low_seats) %>
-</p>
-
 
 
 <%= link_to 'Edit', edit_train_path(@train) %> |

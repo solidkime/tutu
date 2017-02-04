@@ -2,11 +2,6 @@
 <%= render 'common/errors', resource: @wagon %>
 
   <div class="field">
-    <%= f.label :wagon_type %>
-    <%= f.select :wagon_type, [['Econom', :econom], ['Coupe',:coupe]] %>
-  </div>
-
-  <div class="field">
     <%= f.label :top_seats %>
     <%= f.number_field :top_seats %>
   </div>
