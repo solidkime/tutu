@@ -1,0 +1,9 @@
+<h1>Введите данные для покупки билета:</h1>
+
+<p> ФИО пассажира: <%= @ticket.fio %> </p>
+<p> Номер паспорта пассажира: <%= @ticket.passport %> </p>
+<p> Номер поезда: <%= @ticket.train.number %> </p>
+<p> Начальная станция: <%= @ticket.start_station.title %> </p>
+<p> Конечная стнция: <%= @ticket.end_station.title %> </p>
+<p> Отбытие в: <%= @ticket.start_station.departure_in(@ticket.train.route) %> </p>
+<p> Прибытие в: <%= @ticket.end_station.arrival_in(@ticket.train.route) %> </p>

@@ -5,7 +5,7 @@ class RoutesController < ApplicationController
     @routes = Route.all
   end
 
-  def show
+  def show  
   end
 
   def new

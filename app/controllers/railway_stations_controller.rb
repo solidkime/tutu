@@ -1,5 +1,5 @@
 class RailwayStationsController < ApplicationController
-  before_action :set_railway_station, only: [:show, :edit, :update, :destroy, :update_position]
+  before_action :set_railway_station, only: [:show, :edit, :update, :destroy, :update_position, :update_time_station]
 
   # GET /railway_stations
   def index
@@ -48,6 +48,18 @@ class RailwayStationsController < ApplicationController
     @route = Route.find(params[:route_id])
     @railway_station.update_position(@route, params[:position])
     redirect_to @route
+  end
+
+  def update_time_station
+    @route = Route.find(params[:route_id])
+
+    arrival = params[:arrival]
+    departure = params[:departure]
+    @time_arrive = Time.zone.local arrival["arrival(1i)"].to_i, arrival["arrival(2i)"].to_i, arrival["arrival(3i)"].to_i, arrival["arrival(4i)"].to_i, arrival["arrival(5i)"].to_i
+    @time_departure = Time.zone.local departure["departure(1i)"].to_i, departure["departure(2i)"].to_i, departure["departure(3i)"].to_i, departure["departure(4i)"].to_i, departure["departure(5i)"].to_i
+
+    @railway_station.update_time_station(@route, @time_arrive, @time_departure)
+    redirect_to @route, notice: 'Время изменено успешно.'
   end
 
   private
