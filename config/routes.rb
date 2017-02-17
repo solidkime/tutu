@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  
   resources :trains do
     resources :wagons, shallow: true
   end
@@ -13,6 +15,9 @@ Rails.application.routes.draw do
   resources :tickets
 
   resource :search
+
+  root 'searches#show'
+
   # resources :wagons
   # resources :coupe_wagons, controller: 'wagons'
   # resources :sitting_wagons, controller: 'wagons'

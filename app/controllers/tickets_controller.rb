@@ -1,12 +1,13 @@
 class TicketsController < ApplicationController
+  before_action :authenticate_user!, only: :create
   def new
     @ticket = Ticket.new
-    @user = User.new
+    #@user = User.new
   end
 
   def create
-    @user = User.create(name: params[:user_name])
-    @ticket = @user.tickets.new(ticket_params)
+    #@user = User.create(name: params[:user_name])
+    @ticket = current_user.tickets.new(ticket_params)
 
     if @ticket.save
       redirect_to @ticket
