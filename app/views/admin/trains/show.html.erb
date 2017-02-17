@@ -1,0 +1,30 @@
+
+<p>
+  <strong>Number:</strong>
+  <%= @train.number %>
+</p>
+
+<p>
+  <strong>Current route:</strong>
+  <% if @train.route.present? %>
+    <%= @train.route.title %>
+  <% else %>
+    Отсутствует
+  <% end %>
+</p>
+
+<p>
+  <strong>Вагоны</strong>
+  <% if @train.wagons.present? %>
+    <% @train.current_order_wagons.each do |wagon| %><br>
+      <%=  link_to "Вагон #{wagon.number}", [:admin, wagon] %>
+    <% end %>
+  <% end %>
+</p>
+
+<p>
+  <%= link_to "Добавить вагон", new_admin_train_wagon_path(@train) %>
+</p>
+
+<%= link_to 'Edit', edit_admin_train_path(@train) %> |
+<%= link_to 'Back', admin_trains_path %>

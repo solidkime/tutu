@@ -1,0 +1,30 @@
+
+<p>
+  <strong>Wagon</strong><br>
+  <strong>Number:</strong>
+  <%= @wagon.number %><br>
+  <strong>Type:</strong>
+  <%= @wagon.type %><br>
+  <% if @wagon.top_seats.present? %>
+    Верхних мест: <%= @wagon.top_seats %><br>
+  <% end %>
+
+  <% if @wagon.bottom_seats.present? %>
+    Нижних мест: <%= @wagon.bottom_seats %><br>
+  <% end %>
+
+  <% if @wagon.side_top_seats.present? %>
+    Боковых верхних мест: <%= @wagon.side_top_seats %><br>
+  <% end %>
+
+  <% if @wagon.side_bottom_seats.present? %>
+    Боковых нижних мест: <%= @wagon.side_bottom_seats %><br>
+  <% end %>
+
+
+
+</p>
+
+
+<%= link_to 'Edit', [:admin, @wagon] %> |
+<%= link_to 'Back', [:admin, @wagon.train] %>
