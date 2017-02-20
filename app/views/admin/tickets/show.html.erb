@@ -7,3 +7,5 @@
 <p> Конечная стнция: <%= @ticket.end_station.title %> </p>
 <p> Отбытие в: <%= @ticket.start_station.departure_in(@ticket.train.route) %> </p>
 <p> Прибытие в: <%= @ticket.end_station.arrival_in(@ticket.train.route) %> </p>
+
+<%= link_to 'Edit', edit_admin_ticket_path(@ticket) %> |

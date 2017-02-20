@@ -5,5 +5,6 @@
 <!--   <%= button_to "Delete ticket", {action: :destroy, method: :delete, :id => ticket.id} %>
  -->
  <%= link_to 'Посмотреть билет', [:admin, ticket] %> 
+ <%= link_to 'Edit', edit_admin_ticket_path(ticket) %>
   <hr>
 <% end %>

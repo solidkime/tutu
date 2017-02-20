@@ -1,0 +1,39 @@
+<h1>Editing Ticket</h1>
+
+<%= form_for([:admin, @ticket]) do |f| %>
+<%= render 'common/errors', resource: @ticket %>
+
+
+
+  <div class="field">
+    <%= f.label 'Номер билета' %>
+    <%= f.text_field :number, value: @ticket.number %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Фио пассажира' %>
+    <%= f.text_field :fio %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Данные паспорта' %>
+    <%= f.text_field :passport %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :train_id%>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :start_station_id %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :end_station_id %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
