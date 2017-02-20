@@ -1,5 +1,4 @@
-class TicketsController < ApplicationController
-  before_action :authenticate_user!, only: :create
+class Admin::TicketsController < Admin::BaseController
   def new
     @ticket = Ticket.new
     #@user = User.new
@@ -21,7 +20,7 @@ class TicketsController < ApplicationController
   end
 
   def index
-    @tickets = current_user.tickets
+    @tickets = Ticket.all
   end
 
   def destroy

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resource :search
 
   namespace :admin do
+    get '/dashboard', to: 'dashboard#dashboard'
     resources :trains do
       resources :wagons, shallow: true
     end

@@ -1,4 +1,4 @@
-<p> Билет купил <%= @ticket.user.email %> </p>
+<p> Билет купил <%= @ticket.user.email if @ticket.user %> </p>
 
 <p> ФИО пассажира: <%= @ticket.fio %> </p>
 <p> Номер паспорта пассажира: <%= @ticket.passport %> </p>

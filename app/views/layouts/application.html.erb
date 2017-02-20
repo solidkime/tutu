@@ -10,13 +10,13 @@
 
   <body>
   <header>
-    <%= link_to 'Routes', admin_routes_path %> <%= link_to 'Trains', admin_trains_path %> <%= link_to 'Railway Stations', admin_railway_stations_path %> <%= link_to 'Search', search_path %> 
+    <%= link_to 'Routes', admin_routes_path %> <%= link_to 'Trains', admin_trains_path %> <%= link_to 'Railway Stations', admin_railway_stations_path %> <%= link_to 'Search', search_path %>   <%= link_to 'Tickets', tickets_path %> 
     <p id="notice" class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
     <% if user_signed_in? %>
      <%= link_to "Выйти", destroy_user_session_path, method: :delete  %>
-     <p>Аккаунт: <%= current_user.email %></p>
+     <p>Аккаунт: <%= current_user.email %> Привет, <%= current_user.name %> <%= current_user.surname %> </p>
     <% else %>
      <%= link_to "Войти", new_user_session_path %>
     <% end %>

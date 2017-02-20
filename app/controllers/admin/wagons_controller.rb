@@ -50,7 +50,7 @@ class Admin::WagonsController < Admin::BaseController
   end
 
   def wagon_params
-    params.require(:wagon).permit(:top_seats, :bottom_seats, :side_top_seats, :side_top_seats, :sitting_seats)
+    params.require(:wagon).permit(:top_seats, :bottom_seats, :side_top_seats, :side_bottom_seats, :sitting_seats)
   end
 
 end

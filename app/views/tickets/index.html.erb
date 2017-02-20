@@ -1,0 +1,9 @@
+<% @tickets.each do |ticket| %>
+  <p> Билет купил <%= ticket.user.email %> </p>
+  <p> Номер билета <%= ticket.number %> </p>
+  <%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %>
+<!--   <%= button_to "Delete ticket", {action: :destroy, method: :delete, :id => ticket.id} %>
+ -->
+ <%= link_to 'Посмотреть билет', ticket %> 
+  <hr>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170217100750) do
+ActiveRecord::Schema.define(version: 20170219231011) do
 
   create_table "railway_stations", force: :cascade do |t|
     t.string   "title"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20170217100750) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.boolean  "admin",                  default: false
+    t.string   "surname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -81,7 +82,7 @@ ActiveRecord::Schema.define(version: 20170217100750) do
     t.integer "top_seats"
     t.integer "bottom_seats"
     t.integer "train_id"
-    t.string  "number"
+    t.integer "number"
     t.string  "type"
     t.integer "side_top_seats"
     t.integer "side_bottom_seats"
