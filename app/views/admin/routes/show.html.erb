@@ -18,18 +18,7 @@
   <% end %>
 </p>
 
-<!-- <p>
-  <strong>Станции в маршруте:</strong>
-  <% if @route.railway_stations.empty? %>
-    Список пуст
-  <% else %>
-    <ul>
-      <% @route.railway_stations.each do |railway_station| %>
-        <li><%= railway_station.title %></li>
-      <% end %>
-    </ul>
-  <% end %>
-</p> -->
+
 
 <p>
   <strong>Cтанции в маршруте по порядку:</strong>
@@ -58,10 +47,7 @@
 
           <td>
             <%= form_tag update_time_station_admin_railway_station_path(station), method: :patch do %>
-           <!--  <%= text_field_tag :arrival %>
-            <%= text_field_tag :departure %> -->
-<!--             <%= date_select(:station, :arrival) %>
-            <%= date_select(:station, :departure) %> -->
+
             <%= time_select(:arrival, :arrival) %>
             <%= time_select(:departure, :departure) %>
 
