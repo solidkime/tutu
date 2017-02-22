@@ -12,6 +12,10 @@ ru:
         route_id: 'Маршрут'
       route:
         title: "Название"
+      ticket:
+        number: 'Номер'
+        fio: 'ФИО'
+        passport: 'Данные паспорта'
     errors:
       messages:
         blank: "не может быть пустым"
@@ -20,3 +24,7 @@ ru:
           attributes:
             title:
               blank: "должно быть указано"
+        ticket:
+          attributes:
+            number:
+              blank: 'должен присутствовать'

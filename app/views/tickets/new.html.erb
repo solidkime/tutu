@@ -4,11 +4,6 @@
 <%= render 'common/errors', resource: @ticket %>
 
   <div class="field">
-    <%= f.label 'Имя покупателя' %>
-    <%= text_field_tag :user_name %>
-  </div>
-
-  <div class="field">
     <%= f.label 'Номер билета' %>
     <%= f.text_field :number %>
   </div>
@@ -37,8 +32,8 @@
 
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit t('.submit')%>
   </div>
 <% end %>
 
-<%= link_to 'Back', search_path %>
+<%= link_to t('common.back'), search_path %>
