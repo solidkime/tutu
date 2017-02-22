@@ -86,6 +86,7 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: "serene-ridge-12239.herokuapp.com"}
   # SendGrid settings
+  ActionMailer::Base.register_interceptor(SendGrid::MailInterceptor)
 
   ActionMailer::Base.smtp_settings = {
   :user_name => ENV["SENDGRID_USERNAME"],
@@ -93,7 +94,11 @@ Rails.application.configure do
   :domain => 'heroku.com',
   :address => 'smtp.sendgrid.net',
   :port => 587,
-  :authentication => :login,
+  :authentication => :plain,
   :enable_starttls_auto => true
+
 }
+
+  ActionMailer::Base.delivery_method = :smtp
+
 end
