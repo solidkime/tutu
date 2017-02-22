@@ -86,7 +86,6 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: "serene-ridge-12239.herokuapp.com"}
   # SendGrid settings
-  ActionMailer::Base.register_interceptor(SendGrid::MailInterceptor)
 
   ActionMailer::Base.smtp_settings = {
   :user_name => ENV["SENDGRID_USERNAME"],
