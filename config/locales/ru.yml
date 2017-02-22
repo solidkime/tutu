@@ -11,3 +11,15 @@ ru:
     routes:
       form:
         submit: '%{action} маршрут'
+    trains:
+      new:
+        title: 'Новый поезд'
+      form:
+        submit: '%{action} поезд'
+    tickets:
+      edit:
+        title: 'Редактировать билет'
+        submit: 'Редактировать билет'
+  tickets:
+    new:
+      submit: 'Купить билет'

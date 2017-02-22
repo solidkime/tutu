@@ -1,8 +1,17 @@
-<%= form_tag(search_path, method: :post) do %>
-<%= select :start_station, :railway_station_id, RailwayStation.all.collect { |s| [s.title, s.id] } %>
-<%= select :end_station, :railway_station_id, RailwayStation.all.collect { |s| [s.title, s.id] } %>
+<h1>Поиск билета</h1>
+<div class='row'>
+  <%= form_tag(search_path, method: :post) do %>
+  <div class='col-md-4'>
+    <%= select :start_station, :railway_station_id, @stations.collect { |s| [s.title, s.id] }, {}, class: 'form-control' %>
+  </div>
+  <div class='col-md-4'>
+    <%= select :end_station, :railway_station_id, @stations.collect { |s| [s.title, s.id] }, {}, class: 'form-control' %>
+  </div>
+  
+  <div class='col-md-4'>
+    <%= submit_tag "Искать", class: 'btn btn-primary' %>
+    <% end %>
+  </div>
 
-<%= submit_tag "Искать" %>
-<% end %>
-
-<%= render 'searches/result' %>
+  <%= render 'searches/result' %>
+</div>

@@ -4,6 +4,8 @@ class Train < ApplicationRecord
   has_many :tickets
   has_many :wagons
 
+  validates :number, presence: true
+
   def current_order_wagons
     order_wagons ? wagons.from_first : wagons.from_last
   end

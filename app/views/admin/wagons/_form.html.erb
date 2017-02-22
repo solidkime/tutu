@@ -1,5 +1,10 @@
-<%= form_for [:admin, train, wagon] do |f| %>
+<%= form_for [:admin, train, wagon.becomes(Wagon)] do |f| %>
 <%= render 'common/errors', resource: @wagon %>
+
+ <div class="field">
+    <%= f.label :type %>
+    <%= f.select :type, [EconomyWagon.name, CoupeWagon.name, SittingWagon.name, LuxWagon.name] %>
+  </div>
 
   <div class="field">
     <%= f.label :top_seats %>

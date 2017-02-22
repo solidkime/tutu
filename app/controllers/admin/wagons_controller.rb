@@ -28,7 +28,7 @@ class Admin::WagonsController < Admin::BaseController
 
   def update
     if @wagon.update(wagon_params)
-      redirect_to [:admin, @train, @wagon]
+      redirect_to [:admin, @train, @wagon.becomes(Wagon)]
     else
       render :edit
     end
@@ -50,7 +50,7 @@ class Admin::WagonsController < Admin::BaseController
   end
 
   def wagon_params
-    params.require(:wagon).permit(:top_seats, :bottom_seats, :side_top_seats, :side_bottom_seats, :sitting_seats)
+    params.require(:wagon).permit(:top_seats, :bottom_seats, :side_top_seats, :side_bottom_seats, :sitting_seats, :type)
   end
 
 end

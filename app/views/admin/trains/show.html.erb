@@ -17,7 +17,7 @@
   <strong>Вагоны</strong>
   <% if @train.wagons.present? %>
     <% @train.current_order_wagons.each do |wagon| %><br>
-      <%=  link_to "Вагон #{wagon.number}", [:admin, wagon] %>
+      <%=  link_to "Вагон #{wagon.number}", [:admin, wagon.becomes(Wagon)] %>
     <% end %>
   <% end %>
 </p>
