@@ -7,3 +7,4 @@
 <p> Конечная стнция: <%= @ticket.end_station.title %> </p>
 <p> Отбытие в: <%= @ticket.start_station.departure_in(@ticket.train.route) %> </p>
 <p> Прибытие в: <%= @ticket.end_station.arrival_in(@ticket.train.route) %> </p>
+<p><%= link_to 'Destroy', [:admin, @ticket], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"  %></p>
