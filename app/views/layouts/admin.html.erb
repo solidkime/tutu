@@ -10,7 +10,7 @@
 
   <body>
   <header>
-    <%= link_to 'Routes', admin_routes_path %> <%= link_to 'Trains', admin_trains_path %> <%= link_to 'Railway Stations', admin_railway_stations_path %> <%= link_to 'Search', search_path %> <%= link_to 'Tickets', admin_tickets_path %> 
+    <%= link_to 'Routes', admin_routes_path %> <%= link_to 'Trains', admin_trains_path %> <%= link_to 'Railway Stations', admin_railway_stations_path %> <%= link_to 'Search', search_path %> <%= link_to 'Administrate tickets', admin_tickets_path %> <%= link_to 'Tickets', tickets_path %>
     <p id="notice" class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
@@ -24,7 +24,7 @@
     <%= yield %>
 
     <footer>
-      © 2017 solidkime. Учебный проект в <a href="http://thinknetica.com/">онлайн-школе Thinknetica</a>
+      © 2017 solid'ный учебный проект в <a href="http://thinknetica.com/">онлайн-школе Thinknetica</a>
     </footer>
   </body>
 </html>
