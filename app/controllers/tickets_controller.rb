@@ -1,5 +1,5 @@
 class TicketsController < ApplicationController
-  before_action :authenticate_user!, only: :create
+  before_action :authenticate_user!, only: [:create, :new, :destroy, :show]
   def new
     @ticket = Ticket.new
     #@user = User.new
