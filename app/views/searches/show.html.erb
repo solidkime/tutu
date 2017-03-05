@@ -1,6 +1,6 @@
 <h1>Поиск билета</h1>
 <div class='row'>
-  <%= form_tag(search_path, method: :post) do %>
+  <%= form_tag(search_path, method: :post, class: 'search_form') do %>
   <div class='col-md-4'>
     <%= select :start_station, :railway_station_id, @stations.collect { |s| [s.title, s.id] }, {}, class: 'form-control' %>
   </div>
@@ -9,7 +9,7 @@
   </div>
   
   <div class='col-md-4'>
-    <%= submit_tag "Искать", class: 'btn btn-primary' %>
+    <%= submit_tag "Искать", class: 'btn btn-primary find' %>
     <% end %>
   </div>
 
