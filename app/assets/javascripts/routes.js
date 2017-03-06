@@ -1,16 +1,15 @@
 $(document).ready(function(){
-  $('a.edit_station').click(function() {
+  $('a.edit_route').click(function() {
     event.preventDefault();
 
-    var station_id;
+    var route_id;
     var form;
     var title;
 
-    station_id = $(this).data('stationId');
-    form = $('#edit_railway_station_' + station_id);
-    title = $('#railway_station_title_' + station_id)
-
-
+    route_id = $(this).data('routeId');
+    form = $('#edit_route_' + route_id);
+    title = $('#route_title_' + route_id);
+    
     if (!$(this).hasClass('cancel')) {
       
 
@@ -22,7 +21,9 @@ $(document).ready(function(){
       $(this).html('Edit')
       $(this).removeClass('cancel')
     }
+
     form.toggle();
-    title.toggle();    
+    title.toggle();
+
   });
 });

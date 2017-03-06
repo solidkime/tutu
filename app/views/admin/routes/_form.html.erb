@@ -1,5 +1,5 @@
-<%= form_for ([:admin, route]) do |f| %>
-<%= render 'common/errors', resource: @route %>
+<%= form_for [:admin, route], html: { style: "display: #{hidden ? 'none' : 'block'}" } do |f| %>
+<%= render 'common/errors', resource: route %>
 
   <div class="field">
     <%= f.label :title %>
@@ -7,6 +7,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit t('.submit', action: @route.new_record? ? 'Создать' : 'Изменить'), class: 'btn btn-primary' %>
+    <%= f.submit t('.submit', action: route.new_record? ? 'Создать' : 'Изменить'), class: 'btn btn-primary' %>
   </div>
+
 <% end %>
