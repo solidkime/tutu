@@ -1,10 +1,15 @@
 $(document).ready(function(){
   $('#wagon_type').change(function(){
-   var type = "";
+   var type;
 
-    $( "select option:selected" ).each(function() {
-       type += $( this ).text();
-     });
+    // $( "select option:selected" ).each(function() {
+    //    type = $( this ).text();
+    //  });
+
+    type = $( "select option:selected" ).text()
+    console.log(type)
+
+
   //  if (type === "EconomyWagon") {
   //   $('.lux, .sitting, .coupe').addClass("hidden");
   //   $('.economy').removeClass("hidden");
@@ -26,10 +31,10 @@ $(document).ready(function(){
   // };
 
    switch(type){
-   case "EconomyWagon":
-   $('.lux, .sitting, .coupe').addClass("hidden");
-   $('.economy').removeClass("hidden");
-   break;
+    case "EconomyWagon":
+    $('.lux, .sitting, .coupe').addClass("hidden");
+    $('.economy').removeClass("hidden");
+    break;
   
 
   case "CoupeWagon":
